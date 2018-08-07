@@ -48,12 +48,28 @@ input("Press Enter to continue...")
 
 print("\nTASK 2: Printing the genders of the first 20 samples")
 
-
 # Cool! We can get the rows(samples) iterating with a for and the columns(features) by index.
 # But it's still hard to get a column in a list. Example: List with all genders
-data_list_gender = []
-for i in range(20):
-    data_list_gender.append(data_list[i][6])
-print(data_list_gender)
-##########################################################################
 
+#data_list_gender = []
+for i in range(20):
+    #data_list_gender.append(data_list[i][6])
+    print(data_list[i][6])
+##################################################################################
+input("Press Enter to continue...")
+##################################################################################
+# TASK 3
+# TODO: Create a function to add the columns(features) of a list in another list in the same order
+def column_to_list(data, index):
+    column_list = []
+    # Tip: You can use a for to iterate over the samples, get the feature by index and append into a list
+    for i in range(20):
+        column_list.append(data[i][index])
+
+    return column_list
+
+
+# Let's check with the genders if it's working (only the first 20)
+print("\nTASK 3: Printing the list of genders of the first 20 samples")
+
+print(column_to_list(data_list, -2)[:20])
