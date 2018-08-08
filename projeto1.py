@@ -172,5 +172,27 @@ plt.show(block=True)
 
 input("\nPress Enter to continue...")
 ######################################################################################
+# TASK 7
+# TODO: Plot a similar graph for user_types. Make sure the legend is correct.
+print("\nTASK 7: Check the chart!")
 
+# Data to plot
+labels = 'Male', 'Female', 'NaN'
+quantity = count_gender(data_list)
+norm = len(data_list)
+NaN = norm - quantity[0] + quantity[1]
+sizes = [int(1000*(quantity[0]/norm)), int(1000*(quantity[1]/norm)), int(1000*(NaN/norm))]
+colors = ['lightskyblue', 'lightcoral', 'gray']
+explode = (0.05, 0, 0.05)  # explode 1st slice
+ 
+# Plot
+plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90)
+ 
+plt.axis('equal')
+plt.show()
+
+
+input("\nPress Enter to continue...")
+
+######################################################################################
 
