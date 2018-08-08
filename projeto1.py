@@ -54,22 +54,29 @@ print("\nTASK 2: Printing the genders of the first 20 samples")
 #data_list_gender = []
 for i in range(20):
     #data_list_gender.append(data_list[i][6])
-    print(data_list[i][6])
+    print(i+1, data_list[i][6])
 ##################################################################################
-input("Press Enter to continue...")
+input("\nPress Enter to continue...")
 ##################################################################################
 # TASK 3
 # TODO: Create a function to add the columns(features) of a list in another list in the same order
 def column_to_list(data, index):
     column_list = []
     # Tip: You can use a for to iterate over the samples, get the feature by index and append into a list
-    for i in range(20):
-        column_list.append(data[i][index])
+    for i, value in enumerate(data):
+        column_list.append(value[index])
 
     return column_list
 
-
 # Let's check with the genders if it's working (only the first 20)
 print("\nTASK 3: Printing the list of genders of the first 20 samples")
-
 print(column_to_list(data_list, -2)[:20])
+####################################################################################
+# ------------ DO NOT CHANGE ANY CODE HERE ------------
+assert type(column_to_list(data_list, -2)) is list, "TASK 3: Wrong type returned. It should return a list."
+assert len(column_to_list(data_list, -2)) == 1551505, "TASK 3: Wrong lenght returned."
+assert column_to_list(data_list, -2)[0] == "" and column_to_list(data_list, -2)[1] == "Male", "TASK 3: The list doesn't match."
+# -----------------------------------------------------
+
+input("\nPress Enter to continue...")
+####################################################################################
