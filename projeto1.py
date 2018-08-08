@@ -135,3 +135,42 @@ assert count_gender(data_list)[0] == 935854 and count_gender(data_list)[1] == 29
 input("\nPress Enter to continue...")
 # Now we can count the users, which gender use it the most?
 ######################################################################################
+# TASK 6
+# TODO: Create a function to get the most popular gender and print the gender as string.
+# We expect to see "Male", "Female" or "Equal" as answer.
+def most_popular_gender(data_list):
+    answer = ""
+    gender = count_gender(data_list)
+    if gender[0] > gender[1]:
+        answer = "Male"
+    elif gender [0] < gender [1]:
+        answer = "Female"
+    elif gender [0] == gender [1]:
+        answer = "Equal"
+    return answer
+
+
+print("\nTASK 6: Which one is the most popular gender?")
+print("Most popular gender is: ", most_popular_gender(data_list))
+
+# ------------ DO NOT CHANGE ANY CODE HERE ------------
+assert type(most_popular_gender(data_list)) is str, "TASK 6: Wrong type returned. It should return a string."
+assert most_popular_gender(data_list) == "Male", "TASK 6: Returning wrong result!"
+# -----------------------------------------------------
+
+# If it's everything running as expected, check this graph!
+gender_list = column_to_list(data_list, -2)
+types = ["Male", "Female"]
+quantity = count_gender(data_list)
+y_pos = list(range(len(types)))
+plt.bar(y_pos, quantity)
+plt.ylabel('Quantity')
+plt.xlabel('Gender')
+plt.xticks(y_pos, types)
+plt.title('Quantity by Gender')
+plt.show(block=True)
+
+input("\nPress Enter to continue...")
+######################################################################################
+
+
