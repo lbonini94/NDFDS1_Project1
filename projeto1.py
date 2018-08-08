@@ -79,4 +79,29 @@ assert column_to_list(data_list, -2)[0] == "" and column_to_list(data_list, -2)[
 # -----------------------------------------------------
 
 input("\nPress Enter to continue...")
+# Now we know how to access the features, let's count how many Males and Females the dataset have
 ####################################################################################
+# TASK 4
+# TODO: Count each gender. You should not use a function to do that.
+male = 0
+female = 0
+
+for i, value in enumerate(data_list):
+    if value[-2] == "Male":
+        male += 1
+    elif value[-2] == "Female":
+        female += 1
+    else:
+        None
+
+# Checking the result
+print("\nTASK 4: Printing how many males and females we found")
+print("Male: ", male, "\nFemale: ", female)
+#################################################################################
+# ------------ DO NOT CHANGE ANY CODE HERE ------------
+assert male == 935854 and female == 298784, "TASK 4: Count doesn't match."
+# -----------------------------------------------------
+
+input("\nPress Enter to continue...")
+# Why don't we creeate a function to do that?
+#################################################################################
