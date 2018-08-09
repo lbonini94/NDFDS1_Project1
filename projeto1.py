@@ -242,7 +242,7 @@ min_trip = int(min_trip)
 
 """
 
-#so, i searched for sort algorithms withou use built-in functions like sort()
+#so, i searched for sort algorithms withou use ready functions like sort()
 #-----sort algorith find in: http://python3.codes/popular-sorting-algorithms/  #
 def sort_without_built_in_function(arr):
     less = []
@@ -301,4 +301,21 @@ assert round(median_trip) == 670, "TASK 9: median_trip with wrong result!"
 
 input("Press Enter to continue...")
 
+########################################################################################
+# TASK 10
+# Gender is easy because usually only have a few options. How about start_stations? How many options does it have?
+# TODO: Check types how many start_stations do we have using set()
+user_types = column_to_list(data_list, 3)
+user_types = set(user_types)
+
+print("\nTASK 10: Printing start stations:")
+print(len(user_types))
+print(user_types)
+
+# ------------ DO NOT CHANGE ANY CODE HERE ------------
+assert len(user_types) == 582, "TASK 10: Wrong len of start stations."
+# -----------------------------------------------------
+
+input("Press Enter to continue...")
+########################################################################################
 
