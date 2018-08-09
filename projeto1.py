@@ -183,10 +183,10 @@ norm = len(data_list)
 NaN = norm - quantity[0] + quantity[1]
 sizes = [int(1000*(quantity[0]/norm)), int(1000*(quantity[1]/norm)), int(1000*(NaN/norm))]
 colors = ['lightskyblue', 'lightcoral', 'gray']
-explode = (0.05, 0, 0.05)  # explode 1st slice
+explode = (0.05, 0, 0)  # explode 1st slice
  
 # Plot
-plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=90)
+plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=False, startangle=90)
  
 plt.axis('equal')
 plt.show()
@@ -208,8 +208,8 @@ assert answer != "Type your answer here.", "TASK 8: Write your own answer!"
 
 input("Press Enter to continue...")
 # Let's work with the trip_duration now. We cant get some values from it.
-######################################################################################
 
+######################################################################################
 # TASK 9
 # TODO: Find the Minimum, Maximum, Mean and Median trip duration.
 # You should not use ready functions to do that, like max() or min().
@@ -218,6 +218,75 @@ min_trip = 0.
 max_trip = 0.
 mean_trip = 0.
 median_trip = 0.
+
+### here is my first try, but i can't find the median ##
+"""
+for i in range(len(trip_duration_list)):
+    aux = trip_duration_list[i]
+    aux = float(aux)
+
+    if max_trip < aux:
+        max_trip = aux
+        if i == 0:
+            min_trip = aux
+    if min_trip > aux:
+        min_trip = aux
+    
+    mean_trip += aux
+    i += 1
+
+
+mean_trip = round(mean_trip/len(trip_duration_list))
+max_trip = int(max_trip)
+min_trip = int(min_trip)
+
+"""
+
+#so, i searched for sort algorithms withou use built-in functions like sort()
+#-----sort algorith find in: http://python3.codes/popular-sorting-algorithms/  #
+def sort_without_built_in_function(arr):
+    less = []
+    pivotList = []
+    more = []
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[0]
+        for i in arr:
+            if i < pivot:
+                less.append(i)
+            elif i > pivot:
+                more.append(i)
+            else:
+                pivotList.append(i)
+        less = sort_without_built_in_function(less)
+        more = sort_without_built_in_function(more)
+        return less + pivotList + more
+#-----------------------------------------------------------------------------#
+
+float_trip_duration_list = []
+#mean
+n = len(trip_duration_list)
+for i in range(n):
+    mean_trip += float(trip_duration_list[i])
+    float_trip_duration_list += [float(trip_duration_list[i])]
+mean_trip /= n
+mean_trip = round(mean_trip)
+
+sorted_trip_duration_list = sort_without_built_in_function(float_trip_duration_list)
+
+#max and min
+min_trip = sorted_trip_duration_list[0]
+max_trip = sorted_trip_duration_list[-1]
+
+#median
+if len(sorted_trip_duration_list)%2 != 0:
+    #print(len(sorted_trip_duration_list)/2)
+    i = int(len(sorted_trip_duration_list)//2) + 1
+    median_trip = sorted_trip_duration_list[i]
+else:
+    i = int(len(sorted_trip_duration_list)//2)
+    median_trip = (sorted_trip_duration_list[i] + sorted_trip_duration_list[i+1])/2 
 
 
 print("\nTASK 9: Printing the min, max, mean and median")
@@ -231,3 +300,5 @@ assert round(median_trip) == 670, "TASK 9: median_trip with wrong result!"
 # -----------------------------------------------------
 
 input("Press Enter to continue...")
+
+
