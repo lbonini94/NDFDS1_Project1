@@ -61,6 +61,15 @@ input("\nPress Enter to continue...")
 # TASK 3
 # TODO: Create a function to add the columns(features) of a list in another list in the same order
 def column_to_list(data, index):
+    """
+    Function to transform columns into lists
+    Args:
+        data: the list
+        index: the item position
+    Returns:
+        List of indexed items
+
+    """
     column_list = []
     # Tip: You can use a for to iterate over the samples, get the feature by index and append into a list
     for i, value in enumerate(data):
@@ -109,6 +118,15 @@ input("\nPress Enter to continue...")
 # TODO: Create a function to count the genders. Return a list
 # Should return a list with [count_male, counf_female] (e.g., [10, 15] means 10 Males, 15 Females)
 def count_gender(data_list):
+    """
+    Count males or females
+    Args:
+        data_list: List of data 
+            obs:The gender MUST be in column = -2
+    Returns:
+        List of genders
+
+    """
     male = 0
     female = 0
     
@@ -139,6 +157,17 @@ input("\nPress Enter to continue...")
 # TODO: Create a function to get the most popular gender and print the gender as string.
 # We expect to see "Male", "Female" or "Equal" as answer.
 def most_popular_gender(data_list):
+    """
+    Find the most popular gender in a list
+    Args:
+        data_list: list of data
+              obs: The gender MUST be in column = -2
+              because this function depeds of count_gender
+    Returns:
+        Male, Female or Equal 
+
+    """
+
     answer = ""
     gender = count_gender(data_list)
     if gender[0] > gender[1]:
@@ -245,6 +274,14 @@ min_trip = int(min_trip)
 #so, i searched for sort algorithms withou use ready functions like sort()
 #-----sort algorith find in: http://python3.codes/popular-sorting-algorithms/  #
 def sort_without_built_in_function(arr):
+    """
+    Quick sort function without .sort()
+    Args:
+        arr: list of data
+    Returns:
+        The same input list but now sorted 
+
+    """
     less = []
     pivotList = []
     more = []
@@ -318,4 +355,20 @@ assert len(user_types) == 582, "TASK 10: Wrong len of start stations."
 
 input("Press Enter to continue...")
 ########################################################################################
+# TASK 11
+# Go back and make sure you documented your functions. Explain the input, output and what it do. Example:
+# def new_function(param1: int, param2: str) -> list:
+"""
+Example function with annotations.
+Args:
+    param1: The first parameter.
+    param2: The second parameter.
+Returns:
+    List of X values
+
+"""
+print("\n\nAll functions documented\n\n")
+
+input("Press Enter to continue...")
+
 
