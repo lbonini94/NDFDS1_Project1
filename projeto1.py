@@ -72,7 +72,7 @@ def column_to_list(data, index):
     """
     column_list = []
     # Tip: You can use a for to iterate over the samples, get the feature by index and append into a list
-    for i, value in enumerate(data):
+    for value in data:
         column_list.append(value[index])
 
     return column_list
@@ -130,7 +130,7 @@ def count_gender(data_list):
     male = 0
     female = 0
     
-    for i, value in enumerate(data_list):
+    for value in data_list:
         if value[-2] == "Male":
             male += 1
         elif value[-2] == "Female":
