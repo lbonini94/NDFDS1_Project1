@@ -1,0 +1,7 @@
+I found task 2 very similar to task 3, so I modified the "print ()" function
+
+In task 7 I chose to present a pie chart. I hope that's acceptable.
+
+The task 9 I did not understand if I could use the ".Sort ()" so I really racked my brain and used another algorithm.
+Obviously if I used the sort function, I believe the program would be faster and more understandable.
+I apologize if I misunderstand.

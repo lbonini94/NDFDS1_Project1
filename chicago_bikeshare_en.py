@@ -54,7 +54,7 @@ print("\nTASK 2: Printing the genders of the first 20 samples")
 #data_list_gender = []
 for i in range(20):
     #data_list_gender.append(data_list[i][6])
-    print(i+1, data_list[i][6])
+    print("Sample", i+1, ":", data_list[i][6])
 ##################################################################################
 input("\nPress Enter to continue...")
 ##################################################################################
@@ -235,7 +235,7 @@ print("Answer:", answer)
 assert answer != "Type your answer here.", "TASK 8: Write your own answer!"
 # -----------------------------------------------------
 
-input("Press Enter to continue...")
+input("\nPress Enter to continue...")
 # Let's work with the trip_duration now. We cant get some values from it.
 
 ######################################################################################
@@ -248,7 +248,7 @@ max_trip = 0.
 mean_trip = 0.
 median_trip = 0.
 
-### here is my first try, but i can't find the median ##
+### here is my first try, but i can't find the median without sort()##
 """
 for i in range(len(trip_duration_list)):
     aux = trip_duration_list[i]
@@ -271,7 +271,7 @@ min_trip = int(min_trip)
 
 """
 
-#so, i searched for sort algorithms withou use ready functions like sort()
+#so, i searched for sort algorithms without use ready functions like sort()
 #-----sort algorith find in: http://python3.codes/popular-sorting-algorithms/  #
 def sort_without_built_in_function(arr):
     """
@@ -336,7 +336,8 @@ assert round(mean_trip) == 940, "TASK 9: mean_trip with wrong result!"
 assert round(median_trip) == 670, "TASK 9: median_trip with wrong result!"
 # -----------------------------------------------------
 
-input("Press Enter to continue...")
+
+input("\nPress Enter to continue...")
 
 ########################################################################################
 # TASK 10
